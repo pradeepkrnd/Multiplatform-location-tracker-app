@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup>
+  <TargetFrameworks>net10.0-android;net10.0-ios;net10.0-maccatalyst</TargetFrameworks>
+  <OutputType>Exe</OutputType><RootNamespace>LocationTracker.App</RootNamespace>
+  <UseMaui>true</UseMaui><SingleProject>true</SingleProject>
+  <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+  <ApplicationTitle>Location Tracker</ApplicationTitle>
+  <ApplicationId>edu.uc.pradeepk.locationtracker</ApplicationId>
+  <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion><ApplicationVersion>1</ApplicationVersion>
+  <MauiVersion>10.0.110</MauiVersion>
+  <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">23.0</SupportedOSPlatformVersion>
+  <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
+  <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
+ </PropertyGroup>
+ <ItemGroup>
+  <MauiIcon Include="Resources/AppIcon/appicon.svg" Color="#512BD4" />
+  <MauiSplashScreen Include="Resources/Splash/splash.svg" Color="#512BD4" BaseSize="128,128" />
+  <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+  <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
+  <ProjectReference Include="../LocationTracker.Data/LocationTracker.Data.csproj" />
+ </ItemGroup>
+</Project>
